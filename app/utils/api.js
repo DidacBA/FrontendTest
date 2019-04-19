@@ -13,3 +13,11 @@ export async function getRepos (username) {
 
   return response.json();
 }
+
+export async function getProfileAndRepos (username) {
+  const profile = await getProfile(username);
+  const repos = await getRepos(username);
+  const response = { profile, repos };
+
+  return response;
+}

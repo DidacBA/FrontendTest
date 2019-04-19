@@ -11,9 +11,12 @@ module.exports = {
   },
   module: {
     rules: [
-      { test: /\.(js)$/, use: 'babel-loader' },
       { 
-        test: /\.scss$/, 
+        test: /\.(js)$/,
+        use: 'babel-loader'
+      },
+      { 
+        test: /\.(scss)$/, 
         use: [ 
           process.env.NODE_ENV !== 'production' ? 'style-loader' : MiniCssExtractPlugin.loader,
           'css-loader',
@@ -23,7 +26,7 @@ module.exports = {
     ]
   },
   devServer: {
-    historyApiFallback: true
+    port: 1337
   },
   mode: process.env.NODE_ENV === 'production' ? 'production' : 'development',
   plugins: [
