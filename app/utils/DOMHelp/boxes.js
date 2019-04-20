@@ -20,6 +20,6 @@ export function createElement(nodeElement) {
   return element;
 }
 
-export function grabElement(id) {
+export function grab(id) {
   return document.getElementById(id);
 }

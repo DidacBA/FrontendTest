@@ -1,9 +1,9 @@
 import './index.scss';
 import { getProfileAndRepos } from './utils/api/api';
-import { createElement, grabElement } from './utils/boxes/boxes';
+import { createElement, grab } from './utils/DOMHelp/boxes';
 
 (function() {
-  grabElement('app').appendChild(createElement({
+  grab('app').appendChild(createElement({
     tagName: 'div',
     attributes: {
       id: 'container',
@@ -11,35 +11,38 @@ import { createElement, grabElement } from './utils/boxes/boxes';
     },
   }));
   
-  grabElement('container').appendChild(createElement({
+  grab('container').appendChild(createElement({
     tagName: 'form',
     attributes: {
       id: 'search-form',
-      class: 'search-bar',
+      class: 'search-form',
     }
-  }))
+  }));
   
-  grabElement('search-form').append(createElement({
+  grab('search-form').append(createElement({
     tagName: 'input',
     attributes: {
       id: 'search-input',
-      class: 'srch-inp',
-      type: 'search',
+      class: 'search-bar',
+      type: 'text',
       placeholder: 'Search username...'
     }
   }), createElement({
     tagName: 'button',
     attributes: {
       id: 'button',
-      class: 'btn'
+      class: 'btn search-btn'
     },
     text: 'Search'
-  }))
+  }));
 
-  grabElement('button').addEventListener('click', async (event) => {
+  grab('button').addEventListener('click', async (event) => {
     event.preventDefault();
-    const data = await getProfileAndRepos(grabElement('search-input').value);
-    console.log(data);
-  })
+    const data = await getProfileAndRepos(grab('search-input').value);
+    grab('search-form').reset();
+  });
+
+  
+
 })()
 

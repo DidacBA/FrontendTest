@@ -3,6 +3,8 @@ $font-stack: -apple-system, BlinkMacSystemFont,
 'Open Sans', 'Helvetica Neue', sans-serif;
 $primary-color: rgb(238, 238, 238);
 $container-color: rgb(255, 255, 255);
+$borders: 5px;
+$search-bar-padding: 0.5rem;
 
 html {
   box-sizing: border-box;
@@ -34,5 +36,29 @@ h1 {
   -webkit-box-shadow: 9px 8px 26px 1px rgba(135,131,135,1);
   -moz-box-shadow: 9px 8px 26px 1px rgba(135,131,135,1);
   box-shadow: 9px 8px 26px 1px rgba(135,131,135,1);
-  width: 50%;
+  width: 100%;
+  grid-column-start: 2;
+  padding: 2rem;
+  border-radius: $borders;
+  margin-top: 2rem;
+}
+
+.search-bar {
+  padding: $search-bar-padding;
+  box-shadow: none;
+  outline: none;
+  border: 0.5px solid grey;
+  width: 80%;
+  border-radius: $borders;
+}
+
+button {
+  background-color: $primary-color;
+  border-radius: $borders;
+  padding: $search-bar-padding;
+  font-weight: 700;
+}
+
+.search-btn  {
+  margin-left: 2%;
 }
