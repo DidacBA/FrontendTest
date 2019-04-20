@@ -7,11 +7,11 @@ import { createElement, grabElement } from './utils/boxes/boxes';
     tagName: 'div',
     attributes: {
       id: 'container',
-      class: 'cntner',
+      class: 'container',
     },
   }));
   
-  grabElement('div-id').appendChild(createElement({
+  grabElement('container').appendChild(createElement({
     tagName: 'form',
     attributes: {
       id: 'search-form',
@@ -23,7 +23,9 @@ import { createElement, grabElement } from './utils/boxes/boxes';
     tagName: 'input',
     attributes: {
       id: 'search-input',
-      class: 'srch-inp'
+      class: 'srch-inp',
+      type: 'search',
+      placeholder: 'Search username...'
     }
   }), createElement({
     tagName: 'button',
@@ -33,5 +35,11 @@ import { createElement, grabElement } from './utils/boxes/boxes';
     },
     text: 'Search'
   }))
+
+  grabElement('button').addEventListener('click', async (event) => {
+    event.preventDefault();
+    const data = await getProfileAndRepos(grabElement('search-input').value);
+    console.log(data);
+  })
 })()
 

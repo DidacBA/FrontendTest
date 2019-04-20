@@ -38,6 +38,6 @@ module.exports = {
     })
   ],
   node: {
-    fs: 'empty' // Since dotenv is not running on Node.js
+    fs: 'empty'
   }
 }
