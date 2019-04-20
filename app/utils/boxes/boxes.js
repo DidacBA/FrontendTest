@@ -1,4 +1,3 @@
-
 export function createElement(nodeElement) {
   const {
     tagName,
@@ -9,8 +8,8 @@ export function createElement(nodeElement) {
   const element = document.createElement(tagName);
   const attributesList = Object.entries(attributes);
 
-  attributesList.forEach(([attribute, attributeName]) => {
-    element.setAttribute(attribute, attributeName)
+  attributesList.forEach(([attributeName, attribute]) => {
+    element.setAttribute(attributeName, attribute)
   })
 
   if (text) {
@@ -19,4 +18,8 @@ export function createElement(nodeElement) {
   }
 
   return element;
+}
+
+export function grabElement(id) {
+  return document.getElementById(id);
 }

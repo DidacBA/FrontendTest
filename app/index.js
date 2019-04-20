@@ -1,17 +1,37 @@
 import './index.scss';
 import { getProfileAndRepos } from './utils/api/api';
-import { createElement, mount } from './utils/boxes/boxes';
+import { createElement, grabElement } from './utils/boxes/boxes';
 
-const elementObject = {
-  tagName: 'div',
-  attributes: {
-    id: 'div-id',
-    class: 'div-class',
-  },
-  text: 'I am a created element',
-};
+(function() {
+  grabElement('app').appendChild(createElement({
+    tagName: 'div',
+    attributes: {
+      id: 'container',
+      class: 'cntner',
+    },
+  }));
+  
+  grabElement('div-id').appendChild(createElement({
+    tagName: 'form',
+    attributes: {
+      id: 'search-form',
+      class: 'search-bar',
+    }
+  }))
+  
+  grabElement('search-form').append(createElement({
+    tagName: 'input',
+    attributes: {
+      id: 'search-input',
+      class: 'srch-inp'
+    }
+  }), createElement({
+    tagName: 'button',
+    attributes: {
+      id: 'button',
+      class: 'btn'
+    },
+    text: 'Search'
+  }))
+})()
 
-const div1 = createElement(elementObject);
-
-const app = document.getElementById('app');
-app.appendChild(div1);
