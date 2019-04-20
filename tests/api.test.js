@@ -1,4 +1,4 @@
-import { getProfileAndRepos, getProfile, getRepos } from '../app/utils/api';
+import { getProfileAndRepos, getProfile, getRepos } from '../app/utils/api/api';
 import fetch from 'whatwg-fetch';
 
 
