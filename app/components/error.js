@@ -11,6 +11,6 @@ export const buildErrorComponent = (errorMessage) => {
   }))
 
   setTimeout(() => {
-    grab('error').remove();
+    grab('error') ? grab('error').remove() : null;
   }, 5000)
 }

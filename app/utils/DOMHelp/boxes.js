@@ -11,7 +11,7 @@ export function element(nodeElement) {
   const el = document.createElement(tagName);
   const attributesList = Object.entries(attributes);
 
-  attributesList.forEach(([attributeName, attribute]) => {
+  attributesList.map(([attributeName, attribute]) => {
     el.setAttribute(attributeName, attribute);
   })
 

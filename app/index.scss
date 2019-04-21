@@ -20,6 +20,16 @@ body {
   background-color: $primary-color;
 }
 
+h1 {
+  margin-block-start: 0;
+  margin-block-end: 0;
+}
+
+p {
+  margin-block-start: 0;
+  margin-block-end: 0;
+}
+
 #app {
   display: grid;
   grid-template-columns: 0.5fr 1fr 0.5fr;
@@ -68,6 +78,36 @@ button {
   margin-top: 2rem;
 }
 
+.profile-cont {
+  display: grid;
+  grid-template-columns: .5fr 2fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-areas: "Photo ." "Photo ." "Photo .";
+  grid-gap: 1rem;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.profile-image {
+  width: 150px;
+  grid-area: Photo;
+  border-radius: $borders;
+}
+
 .profile-login {
   font-style: italic;
+}
+
+.profile-name {
+
+}
+
+.profile-bio {
+
+}
+
+ul {
+  li {
+    list-style: none;
+  }
 }
