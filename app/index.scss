@@ -47,7 +47,7 @@ h1 {
   padding: $search-bar-padding;
   box-shadow: none;
   outline: none;
-  border: 0.5px solid grey;
+  border: 1px solid grey;
   width: 80%;
   border-radius: $borders;
 }
@@ -61,4 +61,13 @@ button {
 
 .search-btn  {
   margin-left: 2%;
+}
+
+.error-msg {
+  border-radius: $borders;
+  background-color: rgb(248, 217, 217);
+  border: 1px solid rgb(201, 169, 168);
+  color: rgb(141, 16, 11);
+  padding: 1.5rem;
+  margin-top: 2rem;
 }

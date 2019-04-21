@@ -1,5 +1,5 @@
 import './index.scss';
-import { buildMainComponent } from './mainComponent.js'
+import { buildMainComponent } from './components/main.js'
 
 (function() {
   buildMainComponent();
