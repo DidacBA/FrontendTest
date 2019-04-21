@@ -1,5 +1,6 @@
 import { getProfileAndRepos } from './utils/api/api';
 import { createElement, grab } from './utils/DOMHelp/boxes';
+import { buildErrorComponent } from './errorComponent';
 
 export const buildMainComponent = async () => {
   await grab('app').appendChild(createElement({
@@ -9,6 +10,16 @@ export const buildMainComponent = async () => {
       class: 'container',
     },
   }));
+
+  const searchClick = (data) => {
+    if (data.profile.message === 'Not Found') {
+      buildErrorComponent();
+    } else {
+      
+    }
+  }
+
+  // buildSearchForm();
   
   await grab('container').appendChild(createElement({
     tagName: 'form',
@@ -39,6 +50,7 @@ export const buildMainComponent = async () => {
     event.preventDefault();
     const data = await getProfileAndRepos(grab('search-input').value);
     grab('search-form').reset();
+    searchClick(data);
     console.log(data);
   });
 }
