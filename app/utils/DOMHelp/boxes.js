@@ -1,25 +1,25 @@
 const compose = (...fns) => fns.reduce((f, g) => (...args) => f(g(...args)));
 
-export function createElement(nodeElement) {
+export function element(nodeElement) {
   const {
     tagName,
     attributes,
     text,
   } = nodeElement;
 
-  const element = document.createElement(tagName);
+  const el = document.createElement(tagName);
   const attributesList = Object.entries(attributes);
 
   attributesList.forEach(([attributeName, attribute]) => {
-    element.setAttribute(attributeName, attribute)
+    el.setAttribute(attributeName, attribute);
   })
 
   if (text) {
     const textNode = document.createTextNode(text);
-    element.appendChild(textNode);
+    el.appendChild(textNode);
   }
 
-  return element;
+  return el;
 }
 
 export function grab(id) {

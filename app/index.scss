@@ -27,10 +27,6 @@ body {
   grid-template-areas: ". . .";
 }
 
-h1 {
-  color: $primary-color;
-}
-
 .container {
   background-color: $container-color;
   -webkit-box-shadow: 9px 8px 26px 1px rgba(135,131,135,1);
@@ -70,4 +66,8 @@ button {
   color: rgb(141, 16, 11);
   padding: 1.5rem;
   margin-top: 2rem;
+}
+
+.profile-login {
+  font-style: italic;
 }

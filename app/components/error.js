@@ -1,7 +1,7 @@
-import { createElement, grab } from '../utils/DOMHelp/boxes';
+import { element, grab } from '../utils/DOMHelp/boxes';
 
 export const buildErrorComponent = (errorMessage) => {
-  grab('container').append(createElement({
+  grab('container').append(element({
     tagName: 'div',
     attributes: {
       id: 'error',
