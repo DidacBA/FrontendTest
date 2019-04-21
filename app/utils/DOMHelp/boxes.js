@@ -20,6 +20,12 @@ export function element(nodeElement) {
     el.appendChild(textNode);
   }
 
+  if (innerHTML) {
+    innerHTML.map((elem) => {
+      el.appendChild(element(elem))
+    })
+  }
+
   return el;
 }
 

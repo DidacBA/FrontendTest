@@ -65,7 +65,23 @@ export const buildProfile = async (data) => {
       attributes: {
         class: 'repo-list-item'
       },
-      text: `${repo.name} ${repo.stargazers_count} ${repo.forks_count}`
+      text: repo.name,
+      innerHTML: [
+        {
+          tagName: 'span',
+          attributes: {
+            class: 'repo-stars'
+          },
+          text: `${repo.stargazers_count}`
+        },
+        {
+          tagName: 'span',
+          attributes: {
+            class: 'repo-forks'
+          },
+          text: `${repo.forks_count}`
+        },
+      ]
     }))
   })
 }
