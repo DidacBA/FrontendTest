@@ -1,6 +1,5 @@
 import { getProfileAndRepos } from '../utils/api/api';
-import { element, grab } from '../utils/DOMHelp/boxes';
-import { tsNullKeyword } from '@babel/types';
+import { element, grab, DOMScrubber } from '../utils/DOMHelp/boxes';
 
 export const buildSearchForm = async (searchClick) => {
   await grab('container').appendChild(element({
@@ -30,8 +29,7 @@ export const buildSearchForm = async (searchClick) => {
 
   grab('button').addEventListener('click', async (event) => {
     event.preventDefault();
-    grab('profile') ? grab('profile').remove() : null;
-    grab('repos') ? grab('repos').remove() : null;
+    DOMScrubber(['profile', 'repos']);
     const data = await getProfileAndRepos(grab('search-input').value);
     grab('search-form').reset();
     searchClick(data);

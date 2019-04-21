@@ -1,7 +1,6 @@
 import { element, grab } from "../utils/DOMHelp/boxes";
 
 export const buildProfile = async (data) => {
-  console.log(data);
   await grab('container').append(element({
     tagName: 'div',
     attributes: {
@@ -66,7 +65,7 @@ export const buildProfile = async (data) => {
       attributes: {
         class: 'repo-list-item'
       },
-      text: repo.name
+      text: `${repo.name} ${repo.stargazers_count} ${repo.forks_count}`
     }))
   })
 }

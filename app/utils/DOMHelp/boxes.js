@@ -5,6 +5,7 @@ export function element(nodeElement) {
     tagName,
     attributes,
     text,
+    innerHTML
   } = nodeElement;
 
   const el = document.createElement(tagName);
@@ -28,4 +29,10 @@ export function grab(id) {
 
 export function insertAfter(newNode, referenceNode) {
   referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
+}
+
+export function DOMScrubber(idsToScrub) {
+  idsToScrub.map((id) => {
+    grab(id) ? grab(id).remove() : null
+  });
 }
