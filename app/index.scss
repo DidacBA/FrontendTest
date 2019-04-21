@@ -16,8 +16,9 @@ html {
 body {
   margin: 0;
   padding: 0;
-  font: $font-stack;
+  font-family: $font-stack;
   background-color: $primary-color;
+  height: 100vh;
 }
 
 h1 {
@@ -47,6 +48,7 @@ p {
   padding: 2rem;
   border-radius: $borders;
   margin-top: 2rem;
+  max-height: 75vh;
 }
 
 .search-bar {
@@ -83,7 +85,7 @@ button {
   grid-template-columns: .5fr 2fr;
   grid-template-rows: 1fr 1fr 1fr;
   grid-template-areas: "Photo ." "Photo ." "Photo .";
-  grid-gap: 1rem;
+  grid-gap: 0.5rem;
   align-items: center;
   margin-top: 1rem;
 }
@@ -96,6 +98,7 @@ button {
 
 .profile-login {
   font-style: italic;
+  font-size: 12px;
 }
 
 .profile-name {
@@ -103,10 +106,18 @@ button {
 }
 
 .profile-bio {
+  font-size: 12px;
+}
 
+.repos-container {
+  display: flex;
+  flex-direction: column;
 }
 
 ul {
+  flex: 1;
+  height: 400px;
+  overflow: scroll;
   li {
     list-style: none;
   }

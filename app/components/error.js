@@ -1,6 +1,8 @@
-import { element, grab } from '../utils/DOMHelp/boxes';
+import { element, grab, DOMScrubber } from '../utils/DOMHelp/boxes';
 
 export const buildErrorComponent = (errorMessage) => {
+  DOMScrubber(['loading']);
+
   grab('container').append(element({
     tagName: 'div',
     attributes: {

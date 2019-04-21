@@ -12,7 +12,13 @@ export function element(nodeElement) {
   const attributesList = Object.entries(attributes);
 
   attributesList.map(([attributeName, attribute]) => {
-    el.setAttribute(attributeName, attribute);
+    if (attributeName.indexOf('-') > 0) {
+      debugger;
+      attributeName.replace(/_/, '-');
+      el.setAttribute(attributeName, attribute);
+    } else {
+      el.setAttribute(attributeName, attribute);
+    }
   })
 
   if (text) {

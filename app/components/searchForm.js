@@ -31,9 +31,17 @@ export const buildSearchForm = async (searchClick) => {
 
   grab('button').addEventListener('click', async (event) => {
     event.preventDefault();
-    DOMScrubber(['profile', 'repos', 'error']);
+    DOMScrubber(['profile', 'repos', 'error', 'loading']);
+    grab('container').append(element({
+      tagName: 'p',
+      attributes: {
+        id: 'loading',
+        class: 'ldng',
+      },
+      text: 'Loading'
+    }));
     const data = await getProfileAndRepos(grab('search-input').value);
-    grab('search-form').reset();
     searchClick(data);
+    grab('search-form').reset();
   });
 }

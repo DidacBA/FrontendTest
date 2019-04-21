@@ -1,4 +1,4 @@
-import { element, grab } from '../utils/DOMHelp/boxes';
+import { element, grab, DOMScrubber } from '../utils/DOMHelp/boxes';
 import { buildErrorComponent } from './error';
 import { buildSearchForm } from './searchForm';
 import { buildProfile } from './profile';
@@ -16,6 +16,7 @@ export const buildMainComponent = async () => {
     if (data.profile.message === 'Not Found' && !grab('error')) {
       buildErrorComponent('User does not exist');
     } else {
+      DOMScrubber(['loading']);
       buildProfile(data);
     }
   }
