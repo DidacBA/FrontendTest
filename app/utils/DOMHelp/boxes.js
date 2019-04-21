@@ -1,3 +1,5 @@
+const compose = (...fns) => fns.reduce((f, g) => (...args) => f(g(...args)));
+
 export function createElement(nodeElement) {
   const {
     tagName,
@@ -22,4 +24,8 @@ export function createElement(nodeElement) {
 
 export function grab(id) {
   return document.getElementById(id);
+}
+
+export function insertAfter(newNode, referenceNode) {
+  referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
 }
