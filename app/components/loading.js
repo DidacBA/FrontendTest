@@ -1,4 +1,4 @@
-import { element, grab, DOMScrubber } from '../utils/DOMHelp/boxes';
+import { element, grab, DOMScrubber } from '../utils/DOMHelp/DOM';
 
 export const buildLoading = (text) => {
   grab('container').append(element({

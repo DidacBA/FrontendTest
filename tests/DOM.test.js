@@ -1,7 +1,7 @@
-import { createElement, grab } from '../app/utils/DOMHelp/boxes';
+import { element, grab } from '../app/utils/DOMHelp/DOM';
 
 test('createElement returns an html element with correct attributes', () => {
-  const mockElement = createElement({
+  const mockElement = element({
     tagName: 'div',
     attributes: {
       id: 'container',

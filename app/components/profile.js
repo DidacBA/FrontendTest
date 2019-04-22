@@ -1,4 +1,4 @@
-import { element, grab } from "../utils/DOMHelp/boxes";
+import { element, grab } from "../utils/DOMHelp/DOM";
 
 export const buildProfile = async (data) => {
   await grab('container').append(

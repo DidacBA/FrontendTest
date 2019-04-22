@@ -41,7 +41,3 @@ export function DOMScrubber(idsToScrub) {
     grab(id) ? grab(id).remove() : null
   });
 }
-
-export function SVGimage(img) {
-  return `${img}`
-}

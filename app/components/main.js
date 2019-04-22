@@ -1,4 +1,4 @@
-import { element, grab, DOMScrubber } from '../utils/DOMHelp/boxes';
+import { element, grab, DOMScrubber } from '../utils/DOMHelp/DOM';
 import { buildErrorComponent } from './error';
 import { buildSearchForm } from './searchForm';
 import { buildProfile } from './profile';

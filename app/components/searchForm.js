@@ -1,5 +1,5 @@
 import { getProfileAndRepos } from '../utils/api/api';
-import { element, grab, DOMScrubber } from '../utils/DOMHelp/boxes';
+import { element, grab, DOMScrubber } from '../utils/DOMHelp/DOM';
 import { buildLoading } from './loading';
 
 export const buildSearchForm = async (searchClick) => {
