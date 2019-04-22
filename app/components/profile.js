@@ -69,7 +69,6 @@ export const buildProfile = async (data) => {
   }))
 
   data.repos.map((repo) => {
-    console.log(repo);
     grab('repo-list').append(element({
       tagName: 'li',
       attributes: {
