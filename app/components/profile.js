@@ -80,17 +80,18 @@ export const buildProfile = async (data) => {
           tagName: 'svg',
           attributes: {
             class: 'icon',
-            viewBox: '0 0 14 16',
-            width: '14',
-            height: '16',
-            aria_hidden: 'true'
+            version: '1.1',
+            width: '200',
+            height: '200',
+            xmlns: 'http://www.w3.org/2000/svg'
           },
           innerHTML: [
             {
               tagName: 'path',
               attributes: {
-                fill_rule: 'evenodd',
-                d: 'M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74L14 6z'
+                d: 'M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74L14 6z',
+                stroke: 'black',
+                fill: 'transparent'
               }
             }
           ]

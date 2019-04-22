@@ -7,7 +7,7 @@ export async function getProfile (username) {
     const response = await fetch(`https://api.github.com/users/${username}${params}`);  
     return response.json();
   } catch (error) {
-    return error;
+    return console.warn(error);
   }
 }
 
@@ -16,7 +16,7 @@ export async function getRepos (username) {
     const response = await fetch(`https://api.github.com/users/${username}/repos${params}&per_page=100`);
     return response.json();
   } catch (error) {
-    return error;
+    return console.warn(error);
   }
 }
 
@@ -27,6 +27,6 @@ export async function getProfileAndRepos (username) {
     const response = { profile, repos };
     return response;
   } catch (error) {
-    return error;
+    return console.warn(error);
   }
 }

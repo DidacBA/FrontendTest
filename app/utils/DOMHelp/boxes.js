@@ -1,5 +1,3 @@
-const compose = (...fns) => fns.reduce((f, g) => (...args) => f(g(...args)));
-
 export function element(nodeElement) {
   const {
     tagName,
@@ -12,13 +10,8 @@ export function element(nodeElement) {
   const attributesList = Object.entries(attributes);
 
   attributesList.map(([attributeName, attribute]) => {
-    if (attributeName.indexOf('-') > 0) {
-      debugger;
-      attributeName.replace(/_/, '-');
-      el.setAttribute(attributeName, attribute);
-    } else {
-      el.setAttribute(attributeName, attribute);
-    }
+    const attrName = attributeName.replace(/_/g, '-');
+    el.setAttribute(attrName, attribute);
   })
 
   if (text) {

@@ -1,5 +1,6 @@
 import { getProfileAndRepos } from '../utils/api/api';
 import { element, grab, DOMScrubber } from '../utils/DOMHelp/boxes';
+import { buildLoading } from './loading';
 
 export const buildSearchForm = async (searchClick) => {
   await grab('container').append(element({
@@ -31,16 +32,11 @@ export const buildSearchForm = async (searchClick) => {
 
   grab('button').addEventListener('click', async (event) => {
     event.preventDefault();
+    grab('button').disabled = true;
     DOMScrubber(['profile', 'repos', 'error', 'loading']);
-    grab('container').append(element({
-      tagName: 'p',
-      attributes: {
-        id: 'loading',
-        class: 'ldng',
-      },
-      text: 'Loading'
-    }));
+    buildLoading('Loading', 300);
     const data = await getProfileAndRepos(grab('search-input').value);
+    grab('button').disabled = false;
     searchClick(data);
     grab('search-form').reset();
   });
