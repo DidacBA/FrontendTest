@@ -69,49 +69,59 @@ export const buildProfile = async (data) => {
   }))
 
   data.repos.map((repo) => {
+    console.log(repo);
     grab('repo-list').append(element({
       tagName: 'li',
       attributes: {
         class: 'repo-list-item'
       },
-      text: repo.name,
       innerHTML: [
         {
-          tagName: 'div',
+          tagName: 'a',
           attributes: {
-            class: 'repo-icons-container'
+            class: 'repo-link',
+            href: repo.html_url
           },
+          text: repo.name,
           innerHTML: [
             {
-              tagName: 'img',
+              tagName: 'div',
               attributes: {
-                class: 'icon star-icon',
-                src: 'https://upload.wikimedia.org/wikipedia/commons/8/88/Octicons-star.svg'
+                class: 'repo-icons-container'
               },
-            },
-            {
-              tagName: 'span',
-              attributes: {
-                class: 'repo-stars'
-              },
-              text: `${repo.stargazers_count}`
-            },
-            {
-              tagName: 'img',
-              attributes: {
-                class: 'icon fork-icon',
-                src: 'https://upload.wikimedia.org/wikipedia/commons/d/dd/Octicons-repo-forked.svg'
-              },
-            },
-            {
-              tagName: 'span',
-              attributes: {
-                class: 'repo-forks'
-              },
-              text: `${repo.forks_count}`
+              innerHTML: [
+                {
+                  tagName: 'img',
+                  attributes: {
+                    class: 'icon star-icon',
+                    src: 'https://upload.wikimedia.org/wikipedia/commons/8/88/Octicons-star.svg'
+                  },
+                },
+                {
+                  tagName: 'span',
+                  attributes: {
+                    class: 'repo-stars'
+                  },
+                  text: `${repo.stargazers_count}`
+                },
+                {
+                  tagName: 'img',
+                  attributes: {
+                    class: 'icon fork-icon',
+                    src: 'https://upload.wikimedia.org/wikipedia/commons/d/dd/Octicons-repo-forked.svg'
+                  },
+                },
+                {
+                  tagName: 'span',
+                  attributes: {
+                    class: 'repo-forks'
+                  },
+                  text: `${repo.forks_count}`
+                }
+              ]
             }
           ]
-        }
+        },
       ]
     }))
   })

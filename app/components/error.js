@@ -1,6 +1,6 @@
 import { element, grab, DOMScrubber } from '../utils/DOMHelp/boxes';
 
-export const buildErrorComponent = (errorMessage) => {
+export const buildErrorComponent = (text) => {
   DOMScrubber(['loading']);
 
   grab('container').append(element({
@@ -9,10 +9,10 @@ export const buildErrorComponent = (errorMessage) => {
       id: 'error',
       class: 'error-msg',
     },
-    text: `${errorMessage}`
-  }))
+    text
+  }));
 
   setTimeout(() => {
     grab('error') ? grab('error').remove() : null;
-  }, 5000)
+  }, 5000);
 }

@@ -1,3 +1,5 @@
+@import 'reset';
+
 $font-stack: -apple-system, BlinkMacSystemFont,
 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell,
 'Open Sans', 'Helvetica Neue', sans-serif;
@@ -6,19 +8,20 @@ $container-color: rgb(255, 255, 255);
 $borders: 5px;
 $search-bar-padding: 0.5rem;
 
-html {
-  box-sizing: border-box;
-}
-*, *:before, *:after {
-  box-sizing: inherit;
-}
-
 body {
-  margin: 0;
-  padding: 0;
   font-family: $font-stack;
   background-color: $primary-color;
   height: 100vh;
+}
+
+.app-div {
+  display: grid;
+  grid-template-columns: 0.5fr 1fr 0.5fr;
+  grid-template-rows: 1fr;
+  grid-template-areas: ". . .";
+  @media screen and (max-width: 800px) {
+    grid-template-columns: 0.2fr 2fr 0.2fr;
+  }
 }
 
 h1 {
@@ -38,11 +41,20 @@ p {
   margin-block-end: 0;
 }
 
-#app {
-  display: grid;
-  grid-template-columns: 0.5fr 1fr 0.5fr;
-  grid-template-rows: 1fr;
-  grid-template-areas: ". . .";
+a {
+  color: black;
+  text-decoration: none;
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+a:hover {
+  font-size: 21px;
+  padding-bottom: 19px;
+  color: grey;
 }
 
 .container {
@@ -114,10 +126,6 @@ button {
   font-size: 12px;
 }
 
-.profile-name {
-
-}
-
 .profile-bio {
   font-size: 12px;
 }
@@ -133,13 +141,10 @@ ul {
   overflow: scroll;
   padding: 0;
   margin: 0;
+
   li {
     list-style: none;
-    padding: 20px;
     border-bottom: 1px solid grey;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
     font-size: 20px;
     font-weight: 700;
   }
